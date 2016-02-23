@@ -29,6 +29,18 @@ TBU.
 
 TBU.
 
+## Tested and worked 100%
+
+The following shared hosting service providers have been tested and worked perfectly 100%.
+
+* [NameCheap](https://www.namecheap.com/)
+* [JustHost](https://www.justhost.com/)
+* [bluehost](https://www.bluehost.com/)
+* [GoDaddy](https://godaddy.com/)
+* [HostGator](http://www.hostgator.com/)
+
+If you found any hosting providers that works, please tell me, I will update the list for others to know about them, too.
+
 ## Still trouble?
 
 If you still fail to deploy Laravel/Lumen applications after following all above steps. Provide me [your issue](https://github.com/petehouston/laravel-deploy-on-shared-hosting/issues) in details, I will help you out.
