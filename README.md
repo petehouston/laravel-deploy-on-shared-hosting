@@ -14,6 +14,8 @@ Before trying to deploy a Laravel/Lumen application on a shared hosting, you nee
 * Mbstring PHP Extension
 * Tokenizer PHP Extension
 
+Next, you need to have the SSH access permission for your hosting account; otherwise, none of these will work.
+
 Besides PHP and those required extensions, you might need some utilities to make deployment much easier.
 
 * [Git](https://git-scm.com/)
@@ -27,7 +29,26 @@ TBU.
 
 ## FAQs
 
-TBU.
+> **1. How to acquire SSH access permission for my account?**
+
+Just contact your hosting support, they will need to confirm your identity and will permit your SSH access in no time.
+
+> **2. Where is git? I can't find it.**
+
+`git` is often put under this place in CPanel hosting services, `/usr/local/cpanel/3rdparty/bin/git`. So you need to provide full path to `git` if you want to issue a `git` command; or, you can also create an alias for convenient use,
+
+```
+alias git="/usr/local/cpanel/3rdparty/bin/git"
+```
+
+> **3. How to get composer?**
+
+You can use FTP or SCP command to upload `composer.phar` to the host after downloading it locally. Or use `wget` and `curl` to get the file directly on host,
+
+```
+$ wget https://getcomposer.org/composer.phar
+```
+
 
 ## List of service providers tested and worked
 
