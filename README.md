@@ -6,7 +6,7 @@ For a quick version of the guide (many of you might already read about it), read
 
 ## Requirements
 
-Before trying to deploy a Laravel/Lumen application on a shared hosting, you need to make sure that the hosting services provide a fit [requirement to Laravel](https://laravel.com/docs/5.2#server-requirements). Basically, they are the following items:
+Before trying to deploy a Laravel/Lumen application on a shared hosting, you need to make sure that the hosting services provide a fit [requirement to Laravel](https://laravel.com/docs/5.2#server-requirements). Basically, following items are required for Laravel 5.2:
 
 * PHP >= 5.5.9
 * OpenSSL PHP Extension
@@ -14,7 +14,9 @@ Before trying to deploy a Laravel/Lumen application on a shared hosting, you nee
 * Mbstring PHP Extension
 * Tokenizer PHP Extension
 
-Next, you need to have the SSH access permission for your hosting account; otherwise, none of these will work.
+Well, it also depends on the Laravel version you want to try to install, checkout the appropriate version of [Laravel server requirements documentation](https://laravel.com/docs/master).
+
+**Next, you need to have the SSH access permission for your hosting account; otherwise, none of these will work.**
 
 Besides PHP and those required extensions, you might need some utilities to make deployment much easier.
 
@@ -25,7 +27,70 @@ I guess that's enough for good. Please refer to below sections to learn more abo
 
 ## Instruction
 
-TBU.
+Let's get started by understanding how we should organize the Laravel application structure. At first, you will have this or similar directories and files in your account,
+
+```
+.bash_history
+.bash_logout
+.bash_profile
+.bashrc
+.cache
+.cpanel
+.htpasswds
+logs
+mail
+public_ftp
+public_html
+.ssh
+tmp
+etc
+www -> public_html
+...
+```
+
+For the main account which tied with the main domain, the front-end code should stay in `public_html` or `www`. Since, we don't want to expose *Laravel things* (such as, .env, ...) to the outside world, we will hide them.
+
+Create a new directory to store all the code, name it `projects` or whatever you want to.
+
+```
+$ mkdir projects
+$ cd projects
+```
+
+Alright, from here, just issue a git command to grab the code,
+
+```
+$ git clone http://[GIT_SERVER]/awesome-app.git
+$ cd awesome-app
+```
+
+Next step is to make the `awesome-app/public` directory to map with `www` directory, symbol link is a great help for this, but we need to backup `public` directory first.
+
+```
+$ mv public public_bak
+$ ln -s ~/www public
+$ cp -a public_bak/*.* public/
+$ cp public_bak/.htaccess public/
+```
+
+The hard part is done, the rest is to do some basic Laravel setup. Allow write permission to `storage` directory is important,
+
+```
+$ chmod -R o+w storage
+```
+
+**Edit your `.env` for proper configuration. Don't miss this!**
+
+Lastly, update the required packages for Laravel project using **composer** and add some necessary caches,
+
+```
+$ php composer install
+$ php composer dumpautoload -o
+$ php artisan config:cache
+$ php artisan route:cache
+```
+
+**Congratulation! You've successfully set up a Laravel application on a shared hosting service.**
 
 ## FAQs
 
