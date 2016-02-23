@@ -6,7 +6,7 @@ For a quick version of the guide (many of you might already read about it), read
 
 ## Requirements
 
-Before trying to deploy a Laravel/Lumen application on a shared hosting, you need to make sure that the hosting services provide a fit [requirement to Laravel](https://laravel.com/docs/5.2#server-requirements). Basically, following items are required for Laravel 5.2:
+Before trying to deploy a Laravel application on a shared hosting, you need to make sure that the hosting services provide a fit [requirement to Laravel](https://laravel.com/docs/5.2#server-requirements). Basically, following items are required for Laravel 5.2:
 
 * PHP >= 5.5.9
 * OpenSSL PHP Extension
@@ -112,8 +112,31 @@ You can use FTP or SCP command to upload `composer.phar` to the host after downl
 
 ```
 $ wget https://getcomposer.org/composer.phar
+
+or
+
+$ curl -sS https://getcomposer.org/installer | php — –filename=composer
 ```
 
+> **4. Does this work with Lumen?**
+
+Well, Laravel and Lumen are like twins, so it applies the same with Lumen.
+
+> **5. I try to run `composer` but it shows nothing. What is the problem?**
+
+You need to provide a proper PHP configuration to run `composer`, which means, you cannot execute `composer` directly on some hosting service providers. So to execute `composer`, you will need to issue this command,
+
+```
+$ php -c php.ini composer [COMMAND]
+```
+
+> **6. Where can I get the `php.ini` to load for `composer`?**
+
+You can copy the default PHP configuration file `php.ini`, which is often at `/usr/local/lib/php.ini`, or find it by this command,
+
+```
+$ php -i | grep "php.ini"
+```
 
 ## List of service providers tested and worked
 
@@ -129,7 +152,7 @@ If you found any hosting providers that works, please tell me, I will update the
 
 ## Still trouble?
 
-If you still fail to deploy Laravel/Lumen applications after following all above steps. Provide me [your issue](https://github.com/petehouston/laravel-deploy-on-shared-hosting/issues) in details, I will help you out.
+If you still fail to deploy Laravel applications after following all above steps. Provide me [your issue](https://github.com/petehouston/laravel-deploy-on-shared-hosting/issues) in details, I will help you out.
 
 ## Contribution Guide
 
