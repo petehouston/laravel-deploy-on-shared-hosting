@@ -29,7 +29,7 @@ TBU.
 
 TBU.
 
-## Tested and worked 100%
+## List of service providers tested and worked
 
 The following shared hosting service providers have been tested and worked perfectly 100%.
 
