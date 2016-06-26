@@ -147,6 +147,10 @@ The following shared hosting service providers have been tested and worked perfe
 * [bluehost](https://www.bluehost.com/)
 * [GoDaddy](https://godaddy.com/)
 * [HostGator](http://www.hostgator.com/)
+* [GeekStorage](https://www.geekstorage.com/)
+
+Works on [GeekStorage](https://www.geekstorage.com/) shared plan but I had to enable PHP 5.6 via .htaccess
+AddHandler application/x-httpd-php56 .php
 
 If you found any hosting providers that works, please tell me, I will update the list for others to know about them, too.
 
