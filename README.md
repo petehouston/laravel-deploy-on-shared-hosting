@@ -73,6 +73,14 @@ $ cp -a public_bak/*.* public/
 $ cp public_bak/.htaccess public/
 ```
 
+Because we created the symbol link from `www` directory to make it become the *virtual* `public` in project, so we have to update the `~/www/index.php` to include to correct paths.
+
+```
+require __DIR__.'/../projects/awesome-app/bootstrap/autoload.php';
+
+$app = require_once __DIR__.'/../projects/awesome-app/bootstrap/app.php';
+```
+
 The hard part is done, the rest is to do some basic Laravel setup. Allow write permission to `storage` directory is important,
 
 ```
