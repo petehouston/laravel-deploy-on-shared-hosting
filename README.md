@@ -29,7 +29,7 @@ I guess that's enough for good. Please refer to below sections to learn more abo
 
 Let's get started by understanding how we should organize the Laravel application structure. At first, you will have this or similar directories and files in your account,
 
-```
+```bash
 .bash_history
 .bash_logout
 .bash_profile
@@ -52,21 +52,21 @@ For the main account which tied with the main domain, the front-end code should 
 
 Create a new directory to store all the code, name it `projects` or whatever you want to.
 
-```
+```bash
 $ mkdir projects
 $ cd projects
 ```
 
 Alright, from here, just issue a git command to grab the code,
 
-```
+```bash
 $ git clone http://[GIT_SERVER]/awesome-app.git
 $ cd awesome-app
 ```
 
 Next step is to make the `awesome-app/public` directory to map with `www` directory, symbol link is a great help for this, but we need to backup `public` directory first.
 
-```
+```bash
 $ mv public public_bak
 $ ln -s ~/www public
 $ cp -a public_bak/*.* public/
@@ -75,7 +75,7 @@ $ cp public_bak/.htaccess public/
 
 Because we created the symbol link from `www` directory to make it become the *virtual* `public` in project, so we have to update the `~/www/index.php` to include to correct paths.
 
-```
+```php
 require __DIR__.'/../projects/awesome-app/bootstrap/autoload.php';
 
 $app = require_once __DIR__.'/../projects/awesome-app/bootstrap/app.php';
@@ -83,7 +83,7 @@ $app = require_once __DIR__.'/../projects/awesome-app/bootstrap/app.php';
 
 The hard part is done, the rest is to do some basic Laravel setup. Allow write permission to `storage` directory is important,
 
-```
+```bash
 $ chmod -R o+w storage
 ```
 
@@ -91,7 +91,7 @@ $ chmod -R o+w storage
 
 Lastly, update the required packages for Laravel project using **composer** and add some necessary caches,
 
-```
+```bash
 $ php composer install
 $ php composer dumpautoload -o
 $ php artisan config:cache
@@ -110,7 +110,7 @@ Just contact your hosting support, they will need to confirm your identity and w
 
 `git` is often put under this place in CPanel hosting services, `/usr/local/cpanel/3rdparty/bin/git`. So you need to provide full path to `git` if you want to issue a `git` command; or, you can also create an alias for convenient use,
 
-```
+```bash
 alias git="/usr/local/cpanel/3rdparty/bin/git"
 ```
 
@@ -118,7 +118,7 @@ alias git="/usr/local/cpanel/3rdparty/bin/git"
 
 You can use FTP or SCP command to upload `composer.phar` to the host after downloading it locally. Or use `wget` and `curl` to get the file directly on host,
 
-```
+```bash
 $ wget https://getcomposer.org/composer.phar
 
 or
@@ -134,7 +134,7 @@ Well, Laravel and Lumen are like twins, so it applies the same with Lumen.
 
 You need to provide a proper PHP configuration to run `composer`, which means, you cannot execute `composer` directly on some hosting service providers. So to execute `composer`, you will need to issue this command,
 
-```
+```bash
 $ php -c php.ini composer [COMMAND]
 ```
 
@@ -142,7 +142,7 @@ $ php -c php.ini composer [COMMAND]
 
 You can copy the default PHP configuration file `php.ini`, which is often at `/usr/local/lib/php.ini`, or find it by this command,
 
-```
+```bash
 $ php -i | grep "php.ini"
 ```
 
