@@ -30,7 +30,7 @@ Theo tôi như vậy là đủ. Hãy xem các phần bên dưới để tìm hi�
 
 Cùng bắt đầu bằng việc tìm hiểu về cách chúng ta nên quản lý cấu trúc thư mục của ứng dụng Laravel. Đầu tiên, cùng nhìn xem danh sách các files và thư mục bạn có trên tài khoản.
 
-```
+```bash
 .bash_history
 .bash_logout
 .bash_profile
@@ -53,21 +53,21 @@ Với tài khoản chính được gắn với domain chính của bạn, phần
 
 Tạo một thư mục mới để chứa toàn bộ code, đặt tên là `projects` hay bất cứ tên nào bạn muốn.
 
-```
+```bash
 $ mkdir projects
 $ cd projects
 ```
 
 Từ đây, chúng ta sẽ sử dụng câu lệnh git để lấy code về,
 
-```
+```bash
 $ git clone http://[GIT_SERVER]/awesome-app.git
 $ cd awesome-app
 ```
 
 Bước tiếp theo là làm cho thư mục `awesome-app/public` được tham chiếu tới `www`, symbol link sẽ hỗ trợ chúng ta việc này, nhưng chúng ta cần backup thư mục `public` trước đã.
 
-```
+```bash
 $ mv public public_bak
 $ ln -s ~/www public
 $ cp -a public_bak/*.* public/
@@ -76,7 +76,7 @@ $ cp public_bak/.htaccess public/
 
 Phần khoai nhất đã xong, phần còn lại sẽ là các bước cơ bản để thiết lập Laravel. Cấp quyền ghi cho thư mục `storage` là một việc quan trọng,
 
-```
+```bash
 $ chmod -R o+w storage
 ```
 
@@ -84,7 +84,7 @@ $ chmod -R o+w storage
 
 Cuối cùng, hãy cập nhật các packages cần thiết cho project Laravel sử dụng **composer** và thêm các cache cần thiết,
 
-```
+```bash
 $ php composer install
 $ php composer dumpautoload -o
 $ php artisan config:cache
@@ -103,7 +103,7 @@ Hãy liên hệ trực tiếp với bên hỗ trợ của dịch vụ bạn sử
 
 `git` thường được đặt ở vị trí này trong các dịch vụ hosting sử dụng CPanel, `/usr/local/cpanel/3rdparty/bin/git`. Vì vậy, bạn cần phải gõ đường dẫn đầy đủ tới `git` nếu bạn muốn thực thi một câu lệnh; hoặc là bạn của thể tạo một alias cho tiện.
 
-```
+```bash
 alias git="/usr/local/cpanel/3rdparty/bin/git"
 ```
 
@@ -111,7 +111,7 @@ alias git="/usr/local/cpanel/3rdparty/bin/git"
 
 Bạn có thể sử dụng FTP hay SCP để upload file `composer.phar` lên host sau khi download trên máy cá nhân. Hoặc cũng có thể sử dụng `wget` hay `curl` để download file trực tiếp về host.
 
-```
+```bash
 $ wget https://getcomposer.org/composer.phar
 
 hoặc
@@ -127,7 +127,7 @@ Về cơ bản thì Laravel và Lumen như là anh em sinh đôi, vì vậy có 
 
 Bạn cần cung cấp đường dẫn tới file cầu hình PHP để thực thi `composer`, nghĩa là, bạn không thể thực thi `composer` trực tiếp trên host. Vì thể để thực thi `composer`, bạn sẽ phải thực hiện như câu lệnh sau,
 
-```
+```bash
 $ php -c php.ini composer [COMMAND]
 ```
 
@@ -135,7 +135,7 @@ $ php -c php.ini composer [COMMAND]
 
 Bạn có thể copy file cấu hình `php.ini` mặc định, thường nằm tại `/usr/local/lib/php.ini`, hoặc có thể sử dụng câu lệnh sau để tìm kiếm,
 
-```
+```bash
 $ php -i | grep "php.ini"
 ```
 
