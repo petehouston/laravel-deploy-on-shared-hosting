@@ -1,4 +1,7 @@
 # How to deploy Laravel applications on shared hosting
+[![API Documentation](http://img.shields.io/badge/en-English-brightgreen.svg)](README.md)
+[![API Documentation](http://img.shields.io/badge/es-Español-yellow.svg)](README-es.md)
+[![API Documentation](http://img.shields.io/badge/vi-Ti%E1%BA%BFng%20Vi%E1%BB%87t-yellow.svg)](README-vi.md)
 
 The simple guide to deploy Laravel and Lumen application on shared hosting.
 
