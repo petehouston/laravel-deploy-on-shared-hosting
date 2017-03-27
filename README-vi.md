@@ -1,4 +1,7 @@
 # Phương pháp triển khai ứng dụng Laravel trên shared hosting
+[![API Documentation](http://img.shields.io/badge/en-English-yellow.svg)](README.md)
+[![API Documentation](http://img.shields.io/badge/es-Español-yellow.svg)](README-es.md)
+[![API Documentation](http://img.shields.io/badge/vi-Ti%E1%BA%BFng%20Vi%E1%BB%87t-brightgreen.svg)](README-vi.md)
 
 Hướng dẫn đơn giản để triển khai ứng dụng Laravel và Lumen trên shared hosting.
 
