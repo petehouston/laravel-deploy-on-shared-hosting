@@ -91,13 +91,6 @@ require __DIR__.'/../projects/awesome-app/bootstrap/autoload.php';
 $app = require_once __DIR__.'/../projects/awesome-app/bootstrap/app.php';
 ```
 
-
-
-
-
-
-
-
 The hard part is done, the rest is to do some basic Laravel setup. Allow write permission to `storage` directory is important,
 
 ```bash
