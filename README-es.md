@@ -52,7 +52,6 @@ public_html
 tmp
 etc
 www -> public_html
-...
 ```
 
 El código para el front-end para la cuenta principal, la cuál está vinculada con tu dominio principal, debería estar en `public_html` o `www`. Debido a que no queremos exponer las *cosas de Laravel* (como `,env`, etc..) al mundo exterior, las ocultaremos.
@@ -80,7 +79,17 @@ $ cp -a public_bak/*.* public/
 $ cp public_bak/.htaccess public/
 ```
 
-Debido a que creamos el enlace simbólico desde la carpeta `~/www` para hacer que se vuelva la carpeta `public` *virtual* en tu proyecto, debemos actualizar las rutas en el archivo `~/www/index.php`.
+Debido a que creamos el enlace simbólico desde la carpeta `~/www` para hacer que se convierta en la carpeta `public` *virtual* en tu proyecto, debemos actualizar el archivo `~/www/index.php` para reemplazar las rutas viejas con las nuevas:
+
+```diff
+- require __DIR__.’/../bootstrap/autoload.php’;
++ require __DIR__.'/../projects/awesome-app/bootstrap/autoload.php';
+
+- $app = require_once __DIR__.’/../bootstrap/app.php’;
++ $app = require_once __DIR__.'/../projects/awesome-app/bootstrap/app.php';
+```
+
+El archivo actualizado debera quedar así:
 
 ```php
 require __DIR__.'/../projects/awesome-app/bootstrap/autoload.php';
