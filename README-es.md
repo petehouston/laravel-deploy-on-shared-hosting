@@ -1,4 +1,7 @@
 # Cómo desplegar aplicaciones Laravel en hosting compartido
+[![API Documentation](http://img.shields.io/badge/en-English-yellow.svg)](README.md)
+[![API Documentation](http://img.shields.io/badge/es-Español-brightgreen.svg)](README-es.md)
+[![API Documentation](http://img.shields.io/badge/vi-Ti%E1%BA%BFng%20Vi%E1%BB%87t-yellow.svg)](README-vi.md)
 
 Guía simple de cómo desplegar aplicaciones Laravel y Lumen en servicios de alojamiento compartidos.
 
