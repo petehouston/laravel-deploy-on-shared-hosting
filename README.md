@@ -169,6 +169,7 @@ The following shared hosting service providers have been tested and worked perfe
 * [GoDaddy](https://godaddy.com/)
 * [HostGator](http://www.hostgator.com/)
 * [GeekStorage](https://www.geekstorage.com/)
+* [Site5](https://www.site5.com/)
 
 Works on [GeekStorage](https://www.geekstorage.com/) shared plan but I had to enable PHP 5.6 via .htaccess
 AddHandler application/x-httpd-php56 .php
