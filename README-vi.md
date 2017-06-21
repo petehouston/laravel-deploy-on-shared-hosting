@@ -73,7 +73,7 @@ Bước tiếp theo là làm cho thư mục `awesome-app/public` được tham c
 ```bash
 $ mv public public_bak
 $ ln -s ~/www public
-$ cp -a public_bak/*.* public/
+$ cp -a public_bak/* public/
 $ cp public_bak/.htaccess public/
 ```
 

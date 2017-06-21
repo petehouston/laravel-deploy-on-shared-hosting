@@ -72,7 +72,7 @@ Next step is to make the `awesome-app/public` directory to map with `www` direct
 ```bash
 $ mv public public_bak
 $ ln -s ~/www public
-$ cp -a public_bak/*.* public/
+$ cp -a public_bak/* public/
 $ cp public_bak/.htaccess public/
 ```
 

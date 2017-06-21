@@ -75,7 +75,7 @@ El próximo paso es hacer que la carpeta `awesome-app/public` se mapee con la ca
 ```bash
 $ mv public public_bak
 $ ln -s ~/www public
-$ cp -a public_bak/*.* public/
+$ cp -a public_bak/* public/
 $ cp public_bak/.htaccess public/
 ```
 
