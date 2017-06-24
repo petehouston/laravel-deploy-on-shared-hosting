@@ -2,6 +2,7 @@
 [![API Documentation](http://img.shields.io/badge/en-English-yellow.svg)](README.md)
 [![API Documentation](http://img.shields.io/badge/es-Español-brightgreen.svg)](README-es.md)
 [![API Documentation](http://img.shields.io/badge/vi-Ti%E1%BA%BFng%20Vi%E1%BB%87t-yellow.svg)](README-vi.md)
+[![API Documentation](https://img.shields.io/badge/zh_CN-%E4%B8%AD%E6%96%87%EF%BC%88%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86%EF%BC%89-yellow.svg)](README-zh_CN.md)
 
 Guía simple de cómo desplegar aplicaciones Laravel y Lumen en servicios de alojamiento compartidos.
 
@@ -75,7 +76,7 @@ El próximo paso es hacer que la carpeta `awesome-app/public` se mapee con la ca
 ```bash
 $ mv public public_bak
 $ ln -s ~/www public
-$ cp -a public_bak/*.* public/
+$ cp -a public_bak/* public/
 $ cp public_bak/.htaccess public/
 ```
 
