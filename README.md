@@ -172,8 +172,11 @@ The following shared hosting service providers have been tested and worked perfe
 * [GeekStorage](https://www.geekstorage.com/)
 * [Site5](https://www.site5.com/)
 
-Works on [GeekStorage](https://www.geekstorage.com/) shared plan but I had to enable PHP 5.6 via .htaccess
+Works on [GeekStorage](https://www.geekstorage.com/) shared plan but I had to enable PHP 5.6 via `.htaccess`
+
+```
 AddHandler application/x-httpd-php56 .php
+```
 
 If you found any hosting providers that works, please tell me, I will update the list for others to know about them, too.
 
